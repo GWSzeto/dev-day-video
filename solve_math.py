@@ -6,16 +6,16 @@ load_dotenv()
 
 # Create an instance of OpenAI Client
 client = OpenAI(
-        api_key=os.getenv("OPENAI_API_KEY"),
-        )
+    api_key=os.getenv("OPENAI_API_KEY"),
+)
 
 # Create an assistant
 # Speciazlies in solving math problems using python code
 assistant = client.beta.assistants.create(
-        name="Math Tutor",
-        instructions="You are a personal math tutor. Write and run code to answer math questions.",
-        tools=[{"type": "code_interpreter"}],
-        model="gpt-4-1106-preview"
+    name="Math Tutor",
+    instructions="You are a personal math tutor. Write and run code to answer math questions.",
+    tools=[{"type": "code_interpreter"}],
+    model="gpt-4-1106-preview"
 )
 
 # This is the channel that the user and assistant will communicate through
